@@ -12,7 +12,12 @@ class DrawerItems extends StatelessWidget {
         ...drawerItems.map((e) {
           var text = e['text'] as String;
           var icon = e['icon'] as IconData;
-          return DrawerListItem(text: text, icon: icon);
+          var widget = e['nextPage'] as Widget;
+          return DrawerListItem(
+            text: text,
+            icon: icon,
+            nextWidget: widget,
+          );
         })
       ],
     );
